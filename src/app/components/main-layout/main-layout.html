@@ -1,0 +1,49 @@
+<nav class="navbar">
+  <div class="nav-brand" routerLink="/inicio">
+    <span class="icon">📘</span> Innova-Solutions
+  </div>
+  
+  <ul class="nav-links">
+    <li><a routerLink="/inicio" routerLinkActive="active">Inicio</a></li>
+    <li *ngIf="isAdminOrTutor"><a routerLink="/mis-flashcards" routerLinkActive="active">Mis Flashcards</a></li>
+    <li *ngIf="isAdminOrTutor"><a routerLink="/creacion" routerLinkActive="active">Creación</a></li>
+    <li><a routerLink="/acerca-de" routerLinkActive="active">Acerca de</a></li>
+  </ul>
+
+  <div class="nav-profile" #profileMenuContainer>
+    <button class="avatar-btn" (click)="toggleProfileMenu()">
+      <div class="css-avatar-small">
+        <div class="head"></div>
+        <div class="body"></div>
+      </div>
+    </button>
+    
+    <div class="profile-dropdown" *ngIf="isProfileMenuOpen">
+      <a routerLink="/mi-perfil" (click)="closeProfileMenu()">Mi perfil</a>
+      <a (click)="logout()" style="cursor: pointer;">Cerrar Sesión</a>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>Innova-Solutions</h3>
+      <p>Aprendizaje divertido y efectivo.</p>
+    </div>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">TikTok</a>
+      <a href="#">Facebook</a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+    </div>
+  </div>
+</footer>
