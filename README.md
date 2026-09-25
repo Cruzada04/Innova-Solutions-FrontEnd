@@ -1,59 +1,45 @@
-# Innova-Solutions-Frontend
+Innova Solutions · Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+Aplicación web de InnovaSolutions, una plataforma educativa basada en flashcards para apoyar el aprendizaje de niños menores de 10 años dentro del espectro autista. Este repositorio contiene la interfaz en Angular, que consume la API REST del backend.
 
-## Development server
+Proyecto académico desarrollado por el Grupo 06 (Facultad de Ingeniería, UPC), curso Arquitectura de Aplicaciones Web.
 
-To start a local development server, run:
+Backend: Innova-Solutions-Backend
 
-```bash
-ng serve
-```
+Pantallas y funcionalidades
+Bienvenida, selección de rol, registro e inicio de sesión.
+Rutas protegidas con guard de autenticación (token JWT).
+Inicio con el resumen del usuario.
+Creación de categorías y flashcards (texto, imagen, colores de fondo y de texto, y opciones de respuesta).
+Mis flashcards: consulta de las flashcards creadas.
+Sección "Acerca de".
+Tecnologías
+Angular 22 y TypeScript
+Formularios reactivos y Angular Router
+RxJS
+Vitest para pruebas unitarias
+Prettier para el formato del código
+Estructura
+src/app/
+  components/   Pantallas (welcome, login, register-form, role-selection,
+                main-layout, inicio, creacion, mis-flashcards, acerca-de)
+  services/     auth.service (login) y api-data.service (consumo de la API)
+  guards/       auth.guard (protección de rutas)
+Cómo ejecutarlo
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Requisitos: Node.js y npm, y el backend en ejecución en http://localhost:8080.
 
-## Code scaffolding
+bash
+git clone https://github.com/Cruzada04/Innova-Solutions-FrontEnd.git
+cd Innova-Solutions-FrontEnd
+npm install
+npm start
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+La aplicación queda en http://localhost:4200.
 
-```bash
-ng generate component component-name
-```
+La URL del backend está definida en src/app/services/api-data.service.ts y src/app/services/auth.service.ts. Cámbiala ahí si tu API corre en otra dirección.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Otros comandos
+bash
+npm run build   # compilación de producción en dist/
+npm test        # pruebas unitarias
